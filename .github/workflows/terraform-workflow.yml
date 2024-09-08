@@ -1,10 +1,11 @@
 name: Terraform Deploy
-
 on:
-  push:
-    branches: [ "main", "dev" ]
-  pull_request:
-    branches: [ "main", "dev" ]
+  workflow_dispatch:  # Manually trigger this workflow
+#on:
+#  push:
+#    branches: [ "main", "dev" ]
+#  pull_request:
+#    branches: [ "main", "dev" ]
 
 jobs:
   Terraform:
