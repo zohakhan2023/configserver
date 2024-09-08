@@ -70,10 +70,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up kubectl
-        uses: cuzfrog/install-kubectl@master
-        with:
-          version: '1.24.0'
+#      - name: Set up kubectl
+#        uses: cuzfrog/install-kubectl@master
+#        with:
+#          version: '1.24.0'
 
       - name: Configure kubectl
         run: |
