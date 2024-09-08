@@ -21,9 +21,15 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ./terraform
 
       - name: Terraform Plan
         run: terraform plan
+        working-directory: ./terraform
+
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: ./terraform
 
       - name: Terraform Apply
         env:
@@ -31,6 +37,11 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
         run: terraform apply -auto-approve
+      - name: Upload Terraform State
+        uses: actions/upload-artifact@v3
+        with:
+          name: terraform-tfstate
+          path: ./terraform/terraform.tfstate
 
   build:
     name: Build Docker Image
