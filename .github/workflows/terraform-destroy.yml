@@ -1,8 +1,12 @@
 name: Terraform Destroy
 
+#on:
+#  workflow_dispatch:  # This allows you to manually trigger this workflow from GitHub's UI
 on:
-  workflow_dispatch:  # This allows you to manually trigger this workflow from GitHub's UI
-
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
 jobs:
   Terraform:
     name: Terraform Destroy
