@@ -1,16 +1,20 @@
 name: Terraform Deploy
 
-
 on:
-  workflow_dispatch:  # This allows you to manually trigger this workflow from GitHub's UI
-    inputs:
-      build-download-choice:
-        description: 'Build or Download from GH Packages'
-        type: choice
-        default: Build
-        options:
-          - Build
-          - Download
+  push:
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+#on:
+#  workflow_dispatch:  # This allows you to manually trigger this workflow from GitHub's UI
+#    inputs:
+#      build-download-choice:
+#        description: 'Build or Download from GH Packages'
+#        type: choice
+#        default: Build
+#        options:
+#          - Build
+#          - Download
 
 jobs:
   Terraform:
