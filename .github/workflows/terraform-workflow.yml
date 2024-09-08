@@ -23,6 +23,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: ./terraform
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TF_ACTION_WORKING_DIR: '.'
