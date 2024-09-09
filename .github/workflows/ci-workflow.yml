@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: [ "main", "dev" ]
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,7 +35,7 @@ jobs:
       - name: Run tests with test profile
         run: mvn test -Dspring.profiles.active=test
       - name: Install dependencies and test
-        run: mvn clean install
+        run: mvn clean package
 
       - name: Package application
         run: mvn package -DskipTests=true
