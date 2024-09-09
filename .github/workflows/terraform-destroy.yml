@@ -1,8 +1,11 @@
 name: Terraform Destroy
 
+#on:
+#  workflow_dispatch:
 on:
-  workflow_dispatch:
-
+  push:
+    branches:
+      - dev
 jobs:
   destroy:
     runs-on: ubuntu-latest
