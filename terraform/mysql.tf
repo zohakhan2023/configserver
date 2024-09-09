@@ -3,12 +3,11 @@ resource "aws_db_instance" "my_mysql" {
   engine            = "mysql"
   engine_version    = "8.0"
   instance_class    = "db.t3.micro"
-  name              = "mydatabase"
+  db_name           = "mydatabase"  # Use db_name instead of name
   username          = "admin"
   password          = "yourpassword"
   allocated_storage = 20
 
-  # Optional: Modify these settings according to your needs
   db_subnet_group_name = aws_db_subnet_group.default.name
   vpc_security_group_ids = [aws_security_group.default.id]
   backup_retention_period = 7
