@@ -22,3 +22,4 @@ resource "aws_iam_user_policy_attachment" "terraform_user_policy_attach" {
   user       = "terraform-gh-actions"
   policy_arn = aws_iam_policy.s3_policy_permissions.arn
 }
+
